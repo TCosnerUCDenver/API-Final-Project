@@ -1,0 +1,17 @@
+
+h1{
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+#cash_button{
+	position: fixed;
+	margin-left:45%;
+}
+
+#map-canvas {
+	width: 1000px;
+   height: 800px;
+}

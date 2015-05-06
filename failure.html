@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Payment Failed</title>
+		<link rel="stylesheet" type="text/css" href="/public/stylesheets/grid.css">
+		<link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css">
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+
+      function initialize() {
+        var genMarkers = function() {
+          //auto generate this
+          var markers = [
+            { 
+              "position" : new google.maps.LatLng(44.5403, -78.5463),
+              "title" : "123.456.789"
+            },
+            { 
+              "position" : new google.maps.LatLng(44.6403, -78.5463),
+              "title" : "223.456.789"
+            }
+          ];
+          //end auto generate
+          return markers;
+        };
+
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(0,0),
+          zoom: 2,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        var markers = genMarkers();
+        for(var index in markers) {
+          var marker = new google.maps.Marker({
+              position: markers[index]["position"],
+              map: map,
+              title: markers[index]["title"]
+          });
+        }
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+	</head>
+	<body id="banned-body">
+		<div class="grid grid-pad" id ="Index Page">
+      			<div class="col-1-1">
+         			<div class= "content" id ="banned">
+               				<h1>BANNED!</h1>
+									<h2>Sorry! We do not accept money from communist scum!</h2>
+							<div id="map-canvas"></div>
+						</div>
+				</div>
+				<div class="col-1-2">
+					<a href = "/">Home</a>
+				</div>
+			</div>
+		</div>			
+	</body>
+</html>
